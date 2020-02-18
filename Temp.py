@@ -13,6 +13,7 @@ geocoder_params = {
     "spn": str(scale[0]) + ',' + str(scale[1]),
     "z": "13",
     "l": "map"}
+
 try:
     response = requests.get(geocoder_api_server, params=geocoder_params)
     img = response.content
