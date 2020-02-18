@@ -27,6 +27,7 @@ try:
     img = pygame.image.load('new_img_for_yandex_map')
     screen = pygame.display.set_mode(size)
     running = True
+    
     while running:
         screen.fill((0, 0, 0))
         for event in pygame.event.get():
