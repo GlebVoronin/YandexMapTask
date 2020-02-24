@@ -49,7 +49,7 @@ try:
     img = pygame.image.load('new_img_for_yandex_map')
     screen = pygame.display.set_mode(size)
     running = True
-    font = pygame.font.Font(None, 25)
+    font = pygame.font.Font('FreeSansBold.ttf', 25)
     text = font.render('Слой', 1, (0, 0, 0))
     button = Button()
     button.rect.x, button.rect.y = 550, 0
@@ -72,23 +72,23 @@ try:
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
                 elif event.key == pygame.K_DOWN:
-                    if coords[1] > -90:
-                        coords[1] -= scale[1] * 1.3
+                    if coords[1] - scale[1] * 1.5 > -85:
+                        coords[1] -= scale[1] * 1.5
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
                 elif event.key == pygame.K_UP:
-                    if coords[1] < 90:
-                        coords[1] += scale[1] * 1.3
+                    if coords[1] + scale[1] * 1.5 < 85:
+                        coords[1] += scale[1] * 1.5
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
                 if event.key == pygame.K_RIGHT:
-                    if coords[0] < 180:
-                        coords[0] += scale[0] * 1.3
+                    if coords[0] + scale[0] * 1.5 < 180:
+                        coords[0] += scale[0] * 1.5
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
                 elif event.key == pygame.K_LEFT:
-                    if coords[0] > -180:
-                        coords[0] -= scale[0] * 1.3
+                    if coords[0] - scale[0] * 1.5 > -180:
+                        coords[0] -= scale[0] * 1.5
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
             elif event.type == pygame.MOUSEBUTTONDOWN:
