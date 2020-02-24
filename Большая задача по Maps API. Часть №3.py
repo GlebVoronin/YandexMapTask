@@ -46,23 +46,23 @@ try:
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
                 elif event.key == pygame.K_DOWN:
-                    if coords[1] > -90:
-                        coords[1] -= scale[1] * 1.3
+                    if coords[1] - scale[1] * 1.5 > -85:
+                        coords[1] -= scale[1] * 1.5
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
                 elif event.key == pygame.K_UP:
-                    if coords[1] < 90:
-                        coords[1] += scale[1] * 1.3
+                    if coords[1] + scale[1] * 1.5 < 85:
+                        coords[1] += scale[1] * 1.5
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
                 if event.key == pygame.K_RIGHT:
-                    if coords[0] < 180:
-                        coords[0] += scale[0] * 1.3
+                    if coords[0] + scale[0] * 1.5 < 180:
+                        coords[0] += scale[0] * 1.5
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
                 elif event.key == pygame.K_LEFT:
-                    if coords[0] > -180:
-                        coords[0] -= scale[0] * 1.3
+                    if coords[0] - scale[0] * 1.5 > -180:
+                        coords[0] -= scale[0] * 1.5
                         load_map()
                         img = pygame.image.load('new_img_for_yandex_map')
         screen.blit(img, (0, 0))
