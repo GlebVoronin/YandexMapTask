@@ -49,7 +49,7 @@ try:
     img = pygame.image.load('new_img_for_yandex_map')
     screen = pygame.display.set_mode(size)
     running = True
-    font = pygame.font.Font('FreeSansBold.ttf', 25)
+    font = pygame.font.Font('FreeSansBold.ttf', 20)
     text = font.render('Слой', 1, (0, 0, 0))
     button = Button()
     button.rect.x, button.rect.y = 550, 0
