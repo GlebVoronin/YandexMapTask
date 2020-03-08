@@ -65,6 +65,7 @@ class Application(QWidget):
         global point, coords
         point = None
         coords = [float(randint(10, 150)), float(randint(10, 80))]
+        self.load_map()
 
     def initUI(self):
         self.setGeometry(0, 0, size[0], size[1] + 130)
