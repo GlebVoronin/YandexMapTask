@@ -34,8 +34,9 @@ class Application(QWidget):
         file = open('new_img_for_yandex_map.png', 'wb')
         file.write(image)
         file.close()
-        self.pixmap = QPixmap('new_img_for_yandex_map.png')
+        self.pixmap = QPixmap('new_img_for_yandex_map.png', 'wb')
         self.label.setPixmap(self.pixmap)
+        self.setFocus()
 
     def initUI(self):
         self.setGeometry(0, 0, size[0], size[1])
