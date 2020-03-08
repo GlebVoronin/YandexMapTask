@@ -41,8 +41,9 @@ class Application(QWidget):
         file = open('new_img_for_yandex_map.png', 'wb')
         file.write(image)
         file.close()
-        self.pixmap = QPixmap('new_img_for_yandex_map.png')
+        self.pixmap = QPixmap('new_img_for_yandex_map.png', 'wb')
         self.label.setPixmap(self.pixmap)
+        self.setFocus()
 
     def get_coords(self, name):
         geocoder_request = "http://geocode-maps.yandex.ru/1.x/" \
