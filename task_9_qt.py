@@ -75,7 +75,6 @@ class Application(QWidget):
     def reset_postal_index(self):
         global postal_index
         postal_index = not postal_index
-        self.search()
 
     def reset(self):
         global point, coords
