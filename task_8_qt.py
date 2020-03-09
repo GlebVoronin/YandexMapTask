@@ -55,14 +55,17 @@ class Application(QWidget):
         return [float(coords[0]), float(coords[1])], json_response
 
     def search(self):
-        global coords, scale, point
-        coords, json_response = self.get_coords(self.search_area.text())
-        scale = map_scale(json_response)
-        point = "{0},{1}".format(str(coords[0]), str(coords[1]))
-        toponym = json_response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
-        toponym_address = toponym["metaDataProperty"]["GeocoderMetaData"]["text"]
-        self.address_label.setText(toponym_address)
-        self.load_map()
+        try:
+            global coords, scale, point
+            coords, json_response = self.get_coords(self.search_area.text())
+            scale = map_scale(json_response)
+            point = "{0},{1}".format(str(coords[0]), str(coords[1]))
+            toponym = json_response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
+            toponym_address = toponym["metaDataProperty"]["GeocoderMetaData"]["text"]
+            self.address_label.setText(toponym_address)
+            self.load_map()
+        except Exception:
+            self.address_label.setText('Адрес не найден')
 
     def reset(self):
         global point, coords
