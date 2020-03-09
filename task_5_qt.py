@@ -57,10 +57,13 @@ class Application(QWidget):
 
     def search(self):
         global coords, scale, point
-        coords, json_response = self.get_coords(self.search_area.text())
-        scale = map_scale(json_response)
-        point = "{0},{1}".format(str(coords[0]), str(coords[1]))
-        self.load_map()
+        try:
+            coords, json_response = self.get_coords(self.search_area.text())
+            scale = map_scale(json_response)
+            point = "{0},{1}".format(str(coords[0]), str(coords[1]))
+            self.load_map()
+        except Exception:
+            print('Адрес не найден')
 
     def initUI(self):
         self.setGeometry(0, 0, size[0], size[1] + 70)
